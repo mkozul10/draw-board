@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  #data{
+    display:flex;
+    gap:2rem;
+    margin-bottom: 5px;
+  }
+#container{
+    display: grid;
+    height:400px;
+    width:400px;
+    border:solid black 1px;
+}
