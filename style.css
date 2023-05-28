@@ -12,8 +12,10 @@ body {
     margin-bottom: 5px;
   }
 #container{
-    display: grid;
+    display: grid;   
     height:400px;
     width:400px;
-    border:solid black 1px;
+}
+.grid-item{
+    border:solid black 0.25px;
 }
