@@ -24,13 +24,19 @@ function changeColor(){
     var value = select.options[select.selectedIndex].value;
     const gridEl=document.querySelectorAll('.grid-item');
     if(select.options[select.selectedIndex].value==='rgb'){
+        let counter=0;
         gridEl.forEach(gridel=>{
             gridel.addEventListener('mouseover',()=>{
+                counter++;
                 const arr=[];
                 for(let i=0;i<3;i++){
                     arr[i]=Math.floor(Math.random()*256);
                 }
                 gridel.style.backgroundColor=`rgb(${arr[0]},${arr[1]},${arr[2]})`
+                if(counter===10){
+                    counter=0;
+                    gridel.style.backgroundColor='black';
+                }
             })
         });
     }
