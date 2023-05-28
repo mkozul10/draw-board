@@ -10,10 +10,11 @@
 </head>
 <body>
     <div id="data"><span>Choose color:</span>
-        <select>
+        <select id="colors" onchange="changeColor()">
             <option value="black">Black</option>
             <option value="blue">Blue</option>
-            <option value="black">Random</option>
+            <option value="red">Red</option>
+            <option value="rgb">Random</option>
         </select>
         <button id="change-grid" onclick="changeRowColumnNumber(parseInt(prompt('Get value: ')))">Add new grid</button>
     </div>
