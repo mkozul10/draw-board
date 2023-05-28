@@ -12,16 +12,35 @@ function start(RowColumnNumber){
     changeColor();
 }
 function changeRowColumnNumber(input){
+    if(input<=2 || input>100){
+        alert('Input must be from 2 to 100');
+        return;
+    }
      start(input);
 }
 
 function changeColor(){
+    var select = document.querySelector('#colors');
+    var value = select.options[select.selectedIndex].value;
     const gridEl=document.querySelectorAll('.grid-item');
-    gridEl.forEach(gridel=>{
-        gridel.addEventListener('mouseover',()=>{
-            gridel.style.backgroundColor='red';
-        })
-    });
+    if(select.options[select.selectedIndex].value==='rgb'){
+        gridEl.forEach(gridel=>{
+            gridel.addEventListener('mouseover',()=>{
+                const arr=[];
+                for(let i=0;i<3;i++){
+                    arr[i]=Math.floor(Math.random()*256);
+                }
+                gridel.style.backgroundColor=`rgb(${arr[0]},${arr[1]},${arr[2]})`
+            })
+        });
+    }
+    else{
+        gridEl.forEach(gridel=>{
+            gridel.addEventListener('mouseover',()=>{
+                gridel.style.backgroundColor=value;
+            })
+        });
+    }
 }
 
 start(16);
